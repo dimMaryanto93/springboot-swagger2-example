@@ -16,8 +16,8 @@ import java.util.List;
 public class PersonApi {
 
     @ApiOperation("Return new person")
-    @GetMapping(value = "/aPerson", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Person getPerson() {
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Person getPerson(@ApiParam(value = "id person", required = true) @PathVariable Integer id) {
         return new Person(1, "Dimas", "Maryanto");
     }
 
