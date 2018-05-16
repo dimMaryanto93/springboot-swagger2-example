@@ -39,7 +39,10 @@ public class PersonApi {
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Person getPerson(
             @ApiParam(value = "Person information for a new person to be created.", required = true, format = "application/json")
-            @RequestBody Person person) {
+            @RequestBody Person person,
+            @ApiParam(value = "Grade status like A | B | C | D | E", required = true)
+            @RequestParam(required = false) Integer grade
+    ) {
         return person;
     }
 }
